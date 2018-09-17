@@ -1,3 +1,20 @@
-<p>
-  order-list works!
-</p>
+<table class="table">
+  <thead>
+    <th scope="col">Order ID</th>
+    <th scope="col">User Name</th>
+    <th scope="col">Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <th scope="row">{{order.id}}</th>
+      <td>{{order.userId}}</td>
+      <td>
+        <div class="btn-group text-center" >
+          <button class="btn ">1</button>
+          <button class="btn">2</button>
+          <button class="btn">3</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
