@@ -18,5 +18,9 @@ export class OrderListComponent implements OnInit {
   ngOnInit() {
     this.getOrderfromService();
   }
+  selectedOrder: Order;
+  onSelect(order: Order):void{
+    this.selectedOrder = order;
+  }
 
 }

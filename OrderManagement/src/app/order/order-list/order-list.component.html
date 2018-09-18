@@ -1,20 +1,30 @@
-<table class="table">
-  <thead>
-    <th scope="col">Order ID</th>
-    <th scope="col">User Name</th>
-    <th scope="col">Action</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let order of orders">
-      <th scope="row">{{order.id}}</th>
-      <td>{{order.userId}}</td>
-      <td>
-        <div class="btn-group text-center" >
-          <button class="btn ">1</button>
-          <button class="btn">2</button>
-          <button class="btn">3</button>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <h1 class="text-center">Order Management</h1>
+  <br>
+  <div class="row justify-content-md-center">
+    <div class="col-4 order-list">
+      <table class="table text-center  table-striped">
+        <thead>
+          <th scope="col">Order ID</th>
+          <th scope="col">User Name</th>
+          <th scope="col">Action</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders" [class.selected]="order === selectedOrder">
+            <th scope="row">{{order.id}}</th>
+            <td>{{order.userId}}</td>
+            <td>
+              <div class="btn-group text-center">
+                <button class="btn" (click)="onSelect(order)" data-toggle="modal" data-target="#viewModal"><i class="far fa-eye"></i></button>
+                <button class="btn" (click)="onSelect(order)" data-toggle="modal" data-target="#editModal"><i class="far fa-edit"></i></button>
+                <button class="btn"><i class="far fa-trash-alt"></i></button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <app-order-detail [order]="selectedOrder"></app-order-detail>
+  </div>
+
+</div>
