@@ -1,1 +1,9 @@
-<app-order-list></app-order-list>
+<!-- <app-order-list></app-order-list> -->
+<div class="container">
+    <h1 class="text-center">Order Management</h1>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <a routerLink="/orders" class="navbar-brand">Order</a>
+        <a [routerLink]="['/dashboard']" class="navbar-brand">Dashboard</a>
+    </nav>
+    <router-outlet></router-outlet>
+</div>

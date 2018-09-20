@@ -1,0 +1,44 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "userId": "user1",
+      "address": " tran dinh xu q1 tphcm",
+      "dateOrder": "1/1/2018",
+      "totalPrice": 1000000,
+      "status": true
+    },
+    {
+      "id": 2,
+      "userId": "user2",
+      "address": "q2 tphcm",
+      "dateOrder": "2/3/2018",
+      "totalPrice": 2000000,
+      "status": true
+    },
+    {
+      "id": 3,
+      "userId": "user3",
+      "address": "q3 tphcm",
+      "dateOrder": "3/3/2018",
+      "totalPrice": 3000000,
+      "status": false
+    },
+    {
+      "id": 4,
+      "userId": "user4",
+      "address": "q4 tphcm",
+      "dateOrder": "4/4/2018",
+      "totalPrice": 4000000,
+      "status": true
+    },
+    {
+      "id": 5,
+      "userId": "user5",
+      "address": "q5 tphcm",
+      "dateOrder": "5/5/2018",
+      "totalPrice": 5000000,
+      "status": false
+    }
+  ]
+}

@@ -1,76 +1,27 @@
-<div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content" *ngIf="order">
-      <div class="modal-header">
-        <h5 class="modal-title" id="viewModalLabel">Order Detail</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <table class="table">
-          <thead>
-            <th scope="col">Order ID</th>
-            <th scope="col">User ID</th>
-            <th scope="col">Address</th>
-            <th scope="col">Date Order</th>
-            <th scope="col">Total Price</th>
-            <th scope="col">Order Status</th>
-            <th></th>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{{order.id}}</td>
-              <td>{{order.userId}}</td>
-              <td>{{order.address}}</td>
-              <td>{{order.dateOrder}}</td>
-              <td>{{order.totalPrice}}</td>
-              <td>{{order.status ? 'Shipping': 'Deliveried'}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
+<div *ngIf="order">
+  <table class="table">
+    <thead>
+      <th scope="col">Order ID</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Address</th>
+      <th scope="col">Date Order</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Order Status</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{order.id}}</td>
+        <td>{{order.userId}}</td>
+        <td><input [(ngModel)]="order.address" placeholder="address"></td>
+        <td>{{order.dateOrder}}</td>
+        <td><input [(ngModel)]="order.totalPrice" placeholder="totalPrice"></td>
+        <td>{{order.status ? 'Shipping': 'Deliveried'}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content" *ngIf="order">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editModalLabel">Edit Order Detail</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <table class="table">
-            <thead>
-              <th scope="col">Order ID</th>
-              <th scope="col">User ID</th>
-              <th scope="col">Address</th>
-              <th scope="col">Date Order</th>
-              <th scope="col">Total Price</th>
-              <th scope="col">Order Status</th>
-              <th></th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{{order.id}}</td>
-                <td>{{order.userId}}</td>
-                <td><input [(ngModel)]="order.address" placeholder="order.address"></td>
-                <td>{{order.dateOrder}}</td>
-                <td><input [(ngModel)]="order.totalPrice" placeholder="order.address"></td>
-                <td>{{order.status ? 'Shipping': 'Deliveried'}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="save()">Save</button>
+  <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
+</div>

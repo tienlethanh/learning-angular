@@ -1,0 +1,15 @@
+<h3>Recent Orders</h3>
+<div>
+  <table class="table">
+    <thead>
+      <th>Order ID</th>
+      <th>User ID</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{order.id}}</td>
+        <td>{{order.userId}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

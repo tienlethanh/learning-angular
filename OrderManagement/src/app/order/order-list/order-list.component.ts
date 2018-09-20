@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Order} from '../order';
+import { Component, OnInit, Input } from '@angular/core';
+import { Order } from '../order';
 import { OrderService } from '../order.service';
+import { ActivatedRoute } from "@angular/router";
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-order-list',
@@ -10,17 +12,30 @@ import { OrderService } from '../order.service';
 })
 export class OrderListComponent implements OnInit {
   orders: Order[];
-  constructor(private orderService: OrderService ) { }
-  getOrderfromService(): void{
-    this.orderService.getOrderFromData().subscribe(orders => this.orders =orders);
+
+  constructor(
+    private orderService: OrderService
+  ) { }
+
+  ngOnInit(){
+    this.getOrderFromService();
+  }
+  getOrderFromService():void{
+    this.orderService.getOrderFromData().subscribe(
+      updatedOrders => this.orders = this.orders =updatedOrders
+    );
   }
 
-  ngOnInit() {
-    this.getOrderfromService();
+  add(
+    id: number, 
+    userID:string, 
+    address:string,
+    dateOrder:string,
+    totalPrice:number,
+    status:boolean
+  ){
+    
   }
-  selectedOrder: Order;
-  onSelect(order: Order):void{
-    this.selectedOrder = order;
-  }
+
 
 }

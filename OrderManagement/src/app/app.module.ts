@@ -7,17 +7,21 @@ import { AppComponent } from './app.component';
 import { OrderListComponent } from './order/order-list/order-list.component';
 import { OrderDetailComponent } from './order/order-detail/order-detail.component';
 import { OrderService } from './order/order.service';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './order/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderListComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [OrderService],
   bootstrap: [AppComponent]
